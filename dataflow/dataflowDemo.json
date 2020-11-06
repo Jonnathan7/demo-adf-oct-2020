@@ -1,0 +1,39 @@
+{
+	"name": "dataflowDemo",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "FileMoviesCSV",
+						"type": "DatasetReference"
+					},
+					"name": "Movies"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "MoviesOutputCSV",
+						"type": "DatasetReference"
+					},
+					"name": "OutputMovies"
+				},
+				{
+					"dataset": {
+						"referenceName": "OnlineMoviesTable",
+						"type": "DatasetReference"
+					},
+					"name": "MoviesTableSink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "derivedcustom"
+				}
+			],
+			"script": "source(output(\n\t\tmovieId as string,\n\t\ttitle as string,\n\t\tgenres as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> Movies\nMovies derive(Year = toInteger(trim(right(title,6), '()')),\n\t\ttitle = toString(left(title,length(title)-6))) ~> derivedcustom\nderivedcustom sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['OutputMoviesCSV'],\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> OutputMovies\nderivedcustom sink(input(\n\t\tmovieId as integer,\n\t\ttitle as string,\n\t\tgenres as string,\n\t\tmovieYear as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tpreSQLs:['delete from OnlineMovies;'],\n\tmapColumn(\n\t\tmovieId,\n\t\ttitle,\n\t\tgenres,\n\t\tmovieYear = Year\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> MoviesTableSink"
+		}
+	}
+}

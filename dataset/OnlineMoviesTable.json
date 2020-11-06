@@ -1,0 +1,36 @@
+{
+	"name": "OnlineMoviesTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sqlDBOct",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "movieId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "title",
+				"type": "varchar"
+			},
+			{
+				"name": "genres",
+				"type": "varchar"
+			},
+			{
+				"name": "movieYear",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OnlineMovies"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

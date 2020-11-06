@@ -1,0 +1,86 @@
+{
+	"name": "tableSRV3200",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sqlDBOct",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "cctacnt",
+				"type": "varchar"
+			},
+			{
+				"name": "cdescri",
+				"type": "varchar"
+			},
+			{
+				"name": "ccodofi",
+				"type": "char"
+			},
+			{
+				"name": "cmoneda",
+				"type": "char"
+			},
+			{
+				"name": "ndebe",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "nhaber",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "dfeccnt",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ntipcam",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "ctipope",
+				"type": "char"
+			},
+			{
+				"name": "cnrodoc",
+				"type": "char"
+			},
+			{
+				"name": "cglosa",
+				"type": "varchar"
+			},
+			{
+				"name": "corigen",
+				"type": "char"
+			},
+			{
+				"name": "cnomcli",
+				"type": "char"
+			},
+			{
+				"name": "ccodusu",
+				"type": "char"
+			},
+			{
+				"name": "ccodpre",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "srv3200"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

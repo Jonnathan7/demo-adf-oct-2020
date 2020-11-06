@@ -1,0 +1,131 @@
+{
+	"name": "srv3200excel",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "srv3200",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "srv3200",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "srv3200.xlsx",
+				"container": "input"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "cctacnt",
+				"type": "String"
+			},
+			{
+				"name": "cdescri",
+				"type": "String"
+			},
+			{
+				"name": "ccodofi",
+				"type": "String"
+			},
+			{
+				"name": "cmoneda",
+				"type": "String"
+			},
+			{
+				"name": "ndebe",
+				"type": "String"
+			},
+			{
+				"name": "nhaber",
+				"type": "String"
+			},
+			{
+				"name": "dfeccnt",
+				"type": "String"
+			},
+			{
+				"name": "ntipcam",
+				"type": "String"
+			},
+			{
+				"name": "ctipope",
+				"type": "String"
+			},
+			{
+				"name": "cnrodoc",
+				"type": "String"
+			},
+			{
+				"name": "ctipchq",
+				"type": "String"
+			},
+			{
+				"name": "cdocnro",
+				"type": "String"
+			},
+			{
+				"name": "cdocref",
+				"type": "String"
+			},
+			{
+				"name": "cglosa",
+				"type": "String"
+			},
+			{
+				"name": "cchkflg",
+				"type": "String"
+			},
+			{
+				"name": "corigen",
+				"type": "String"
+			},
+			{
+				"name": "ctipmon",
+				"type": "String"
+			},
+			{
+				"name": "cnomcli",
+				"type": "String"
+			},
+			{
+				"name": "ccodusu",
+				"type": "String"
+			},
+			{
+				"name": "cnrochq",
+				"type": "String"
+			},
+			{
+				"name": "cestado",
+				"type": "String"
+			},
+			{
+				"name": "cflag",
+				"type": "String"
+			},
+			{
+				"name": "cdestip",
+				"type": "String"
+			},
+			{
+				"name": "ctippag",
+				"type": "String"
+			},
+			{
+				"name": "cctabak",
+				"type": "String"
+			},
+			{
+				"name": "ccodpre",
+				"type": "String"
+			},
+			{
+				"name": "lnocomven",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

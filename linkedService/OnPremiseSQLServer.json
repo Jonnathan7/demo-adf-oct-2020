@@ -1,0 +1,16 @@
+{
+	"name": "OnPremiseSQLServer",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=LIM-LP1755\\ARQUITECT;initial catalog=DB_SIGV;user id=sa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI4Njg2NmE2NC1kZTExLTRmZTMtOWRjZS0zNjFiMjkyN2QzY2UiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "MySelfHosted2020",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
